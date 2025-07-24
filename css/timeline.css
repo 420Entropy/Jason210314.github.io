@@ -1,0 +1,24 @@
+.posts-collapse::after {
+  background: #ddd;
+}
+
+.posts-collapse .collection-title::before {
+  background: #ccc;
+}
+
+.posts-collapse .post-header::before {
+  background: #ccc;
+  border: 1px solid #fff;
+}
+
+.posts-collapse .post-header:hover {
+  border-bottom-color: #222;
+}
+
+.posts-collapse .post-header:hover::before {
+  background: #222;
+}
+
+.page-archive .posts-collapse .archive-move-on {
+  display: none;
+}
