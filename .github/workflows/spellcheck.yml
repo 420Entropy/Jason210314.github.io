@@ -1,0 +1,35 @@
+name: Spellcheck
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: check-spelling/check-spelling@v0.0.22
+        with:
+          files: |
+            **/*.md
+          # Exclude files that are likely to have a lot of false positives
+          # The user can customize this list later
+          exclude: |
+            **/*.yml
+            **/*.xml
+            **/LICENSE
+            **/CNAME
+            **/node_modules/**
+            **/bower_components/**
+            **/vendor/**
+            **/dist/**
+            **/build/**
+            **/target/**
+            **/public/**
+            **/themes/**
+            **/scaffolds/**
+          # Add a custom dictionary file if needed in the future
+          # dictionary: ./.spellcheck_dictionary.txt
